@@ -1,2 +1,2 @@
 # Lists_Demo
-Lists Demonstration
+Examples of lists in C# to demonstrate proficiency
