@@ -7,7 +7,7 @@ namespace Lists_Demo
         static void Main(string[] args)
         {
             // Set up some data to work with
-            List<SteeringWheel> steeringWheels = new List<SteeringWheel>();
+            CustomList<SteeringWheel> steeringWheels = new CustomList<SteeringWheel>();
 
             SteeringWheel citroenSteeringWheel = new SteeringWheel();
             citroenSteeringWheel.Id = 7;
@@ -29,29 +29,37 @@ namespace Lists_Demo
             dakotaSteeringWheel.NumberOfSpokes = 4;
             dakotaSteeringWheel.TypeOfMaterial = "Urethane";
 
-            steeringWheels.Add(citroenSteeringWheel);
-            steeringWheels.Add(hrvSteeringWheel);
-            steeringWheels.Add(dakotaSteeringWheel);
-            steeringWheels.Add(typeRSteeringWheel);
+            steeringWheels.AddItem(citroenSteeringWheel);
+            steeringWheels.AddItem(hrvSteeringWheel);
+            steeringWheels.AddItem(dakotaSteeringWheel);
+            steeringWheels.AddItem(typeRSteeringWheel);
 
             // Display the steering wheel prpoerties from steering wheels
             // in the list
-            Console.WriteLine("Info about the Steering Wheels in Our List");
+            Console.WriteLine("Info about the Steering Wheels in Our Custom List");
             Console.WriteLine();
             Console.WriteLine("Id Spokes Material");
             Console.WriteLine("-- ------ --------");
 
-            foreach (SteeringWheel sw in steeringWheels)
+            for (int i = 0; i < steeringWheels.Count(); i++)
             {
-                Console.WriteLine($"{sw.Id}  {sw.NumberOfSpokes}      {sw.TypeOfMaterial}");
+                Console.WriteLine($"{steeringWheels[i].Id}  " +
+                    $"{steeringWheels[i].NumberOfSpokes}      " +
+                    $"{steeringWheels[i].TypeOfMaterial}");
             }
             
             Console.WriteLine();
 
             // Display the steering wheel properties from steering wheels
             // after sorting the list by Id
-            List<SteeringWheel> sortedSteeringWheels =
-                steeringWheels.OrderBy(s => s.Id).ToList();
+            List<SteeringWheel> moreSteeringWheels = new List<SteeringWheel>();
+
+            moreSteeringWheels.Add(citroenSteeringWheel);
+            moreSteeringWheels.Add(hrvSteeringWheel);
+            moreSteeringWheels.Add(dakotaSteeringWheel);
+            moreSteeringWheels.Add(typeRSteeringWheel);
+
+            List<SteeringWheel> sortedSteeringWheels = moreSteeringWheels.OrderBy(s => s.Id).ToList();
 
             Console.WriteLine("Info about the Steering Wheels in Our Sorted List");
             Console.WriteLine();
@@ -62,10 +70,6 @@ namespace Lists_Demo
             {
                 Console.WriteLine($"{sw.Id}  {sw.NumberOfSpokes}      {sw.TypeOfMaterial}");
             }
-
-            // Return the index of one of our steering wheels
-            Console.WriteLine();
-            Console.WriteLine($"Index of HRV Steering Wheel: {steeringWheels.IndexOf(hrvSteeringWheel)}");
         }
     }
 }

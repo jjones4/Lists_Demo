@@ -12,6 +12,6 @@ namespace Lists_Library
 
         public int NumberOfSpokes { get; set; } = default;
 
-        public string TypeOfMaterial { get; set; } = default;
+        public string TypeOfMaterial { get; set; } = string.Empty;
     }
 }
