@@ -11,12 +11,12 @@ namespace Lists_Library
     {
         const int initialCapacity = 1;
 
-        T[] _elements;
+        T[] _customList;
         int _size;
 
         public CustomList(int capacity = initialCapacity)
         {
-            _elements= new T[capacity];
+            _customList = new T[capacity];
         }
 
         public int Count()
@@ -28,7 +28,7 @@ namespace Lists_Library
         {
             get
             {
-                return _elements.Length;
+                return _customList.Length;
             }
             set
             {
@@ -37,11 +37,11 @@ namespace Lists_Library
                     value = _size;
                 }
 
-                if (value != _elements.Length)
+                if (value != _customList.Length)
                 {
                     T[] newElements = new T[value];
-                    Array.Copy(_elements, 0, newElements, 0, _size);
-                    _elements = newElements;
+                    Array.Copy(_customList, 0, newElements, 0, _size);
+                    _customList = newElements;
                 }
             }
         }
@@ -50,11 +50,11 @@ namespace Lists_Library
         {
             get
             {
-                return _elements[index];
+                return _customList[index];
             }
             set
             {
-                _elements[index] = value;
+                _customList[index] = value;
             }
         }
 
@@ -65,7 +65,7 @@ namespace Lists_Library
                 Capacity = _size + 1;
             }
 
-            _elements[_size] = item;
+            _customList[_size] = item;
             _size++;
         }
     }
