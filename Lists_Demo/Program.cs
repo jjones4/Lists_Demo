@@ -6,6 +6,8 @@ namespace Lists_Demo
     {
         static void Main(string[] args)
         {
+            Console.WriteLine();
+
             // Set up some data to work with
             CustomList<SteeringWheel> steeringWheels = new CustomList<SteeringWheel>();
 
@@ -36,16 +38,16 @@ namespace Lists_Demo
 
             // Display the steering wheel prpoerties from steering wheels
             // in the list
-            Console.WriteLine("Info about the Steering Wheels in Our Custom List");
+            Console.WriteLine("   Info about the Steering Wheels in Our Custom List");
             Console.WriteLine();
-            Console.WriteLine("Id Spokes Material");
-            Console.WriteLine("-- ------ --------");
+            Console.WriteLine("   Id Spokes Material");
+            Console.WriteLine("   -- ------ --------");
 
             for (int i = 0; i < steeringWheels.Count(); i++)
             {
-                Console.WriteLine($"{steeringWheels[i].Id}  " +
-                    $"{steeringWheels[i].NumberOfSpokes}      " +
-                    $"{steeringWheels[i].TypeOfMaterial}");
+                Console.WriteLine($"   {steeringWheels[i].Id}  " +
+                    $"   {steeringWheels[i].NumberOfSpokes}      " +
+                    $"   {steeringWheels[i].TypeOfMaterial}");
             }
             
             Console.WriteLine();
@@ -61,14 +63,14 @@ namespace Lists_Demo
 
             List<SteeringWheel> sortedSteeringWheels = moreSteeringWheels.OrderBy(s => s.Id).ToList();
 
-            Console.WriteLine("Info about the Steering Wheels in Our Sorted List");
+            Console.WriteLine("   Info about the Steering Wheels in Our Sorted List");
             Console.WriteLine();
-            Console.WriteLine("Id Spokes Material");
-            Console.WriteLine("-- ------ --------");
+            Console.WriteLine("   Id Spokes Material");
+            Console.WriteLine("   -- ------ --------");
 
             foreach (SteeringWheel sw in sortedSteeringWheels)
             {
-                Console.WriteLine($"{sw.Id}  {sw.NumberOfSpokes}      {sw.TypeOfMaterial}");
+                Console.WriteLine($"   {sw.Id}  {sw.NumberOfSpokes}      {sw.TypeOfMaterial}");
             }
         }
     }
