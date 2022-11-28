@@ -46,8 +46,8 @@ namespace Lists_Demo
             for (int i = 0; i < steeringWheels.Count(); i++)
             {
                 Console.WriteLine($"   {steeringWheels[i].Id}  " +
-                    $"   {steeringWheels[i].NumberOfSpokes}      " +
-                    $"   {steeringWheels[i].TypeOfMaterial}");
+                    $"{steeringWheels[i].NumberOfSpokes}      " +
+                    $"{steeringWheels[i].TypeOfMaterial}");
             }
             
             Console.WriteLine();
